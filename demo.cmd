@@ -18,7 +18,7 @@ emacs --no-init-file --chdir %$dir% --load %$file% %$file%
 
 goto end
 :usage
-echo "Usage: transfer-vt <filename>"
+echo "Usage: demo.cmd <filename>"
 exit /b 2
 
 :end
