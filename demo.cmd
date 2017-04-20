@@ -18,7 +18,10 @@ emacs --no-init-file --chdir %$dir% --load %$file% %$file%
 
 goto end
 :usage
-echo "Usage: demo.cmd <filename>"
+echo "--- Usage: demo.cmd <filename> ---"
+echo :
+echo Directory Contents: 
+dir /s /b | findstr ".el"
 exit /b 2
 
 :end
