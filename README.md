@@ -5,7 +5,10 @@ Used to test different emacs confugurations.
 
 ## scripts
 ### demo.cmd
-## demo1
+## Emacs conf-dirs
+### demo1
 Contains...
-## demo2
-## demo3
+### demo2
+### demo3
+## Example text
+An  [example text](./exampel-text.md) for testing commands on.
