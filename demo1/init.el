@@ -6,6 +6,7 @@
 (setq user-emacs-directory (file-name-directory user-init-file))
 (setq default-directory (file-name-directory user-init-file))
 (setq package-user-dir (concat (file-name-directory user-init-file) "elpa/"))
+
 ;; use a separate file to store changes made by customize.
 (setq custom-file (expand-file-name "customize.el" user-emacs-directory))
 (load custom-file 'noerror)
