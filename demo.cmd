@@ -18,10 +18,12 @@ emacs --no-init-file --chdir %$dir% --load %$file% %$file%
 
 goto end
 :usage
-echo "--- Usage: demo.cmd <filename> ---"
-echo :
+echo "This is an environment to test various emacs options."
+echo.
+echo "--- Usage: demo.cmd <init-filename> ---"
+echo.
 echo Directory Contents: 
-dir /s /b | findstr ".el"
+dir /s /b | findstr /i /l /e "init.el"
 exit /b 2
 
 :end
