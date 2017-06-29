@@ -1,1 +1,3 @@
 # Files to ignore that are generated automatically for emacs
+*~
+elpa/
