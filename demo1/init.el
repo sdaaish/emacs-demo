@@ -11,13 +11,13 @@
 (setq custom-file (expand-file-name "customize.el" user-emacs-directory))
 (load custom-file 'noerror)
 
-(require 'package)
-(package-initialize)
-(package-refresh-contents)
-
+;; Winner mode handles window-changes
 (winner-mode t)
 
-;; Set what kind av archives shpuld be used
+;; We want to use UTF-8 as coding system
+(prefer-coding-system       'utf-8)
+
+;; Set what kind of archives should be used
 (setq package-enable-at-startup nil)
 (setq package-archives nil)
 (require 'package)
@@ -34,3 +34,6 @@
 
 (eval-when-compile
   (require 'use-package))
+
+;; Print out startup time
+(message "*** Startup time=%s ***" (emacs-init-time))
