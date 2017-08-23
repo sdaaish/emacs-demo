@@ -1,6 +1,6 @@
 @echo off
 
-:: Starts emacs with different config than normal
+:: Starts emacs with a different config than your normal version.
 :: 2017-04-19/SDAA
 
 if [%1]==[] goto usage
