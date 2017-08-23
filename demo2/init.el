@@ -1,6 +1,8 @@
 ;; This is the init-file that are loaded by emacs when the script demo.cmd are run.
 ;; All files used by this emacs-session (packages, themes, faces etc) should be stored in this directory.
 
+;; This file tests helm and helm-google
+
 ;; This parts sets variables so files are stored in the init-file directory
 (setq user-init-file (or load-file-name (buffer-file-name)))
 (setq user-emacs-directory (file-name-directory user-init-file))

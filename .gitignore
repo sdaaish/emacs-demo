@@ -1,5 +1,8 @@
 # Files to ignore that are generated automatically for emacs
 *~
+# Don't track custom changes
+customize.el
+
 elpa/
 url/
 eshell/
