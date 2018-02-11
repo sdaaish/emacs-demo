@@ -11,7 +11,7 @@ Currently this works in Windows 10. Other versions not tested, but any Windows v
 - `emacs.exe` must be in the path for the scripts to work
 
 ## How to use this
-To try this out in Windows, from either the command-shell or powershell.
+In Windows from either the command-shell or powershell follow instructions below.
 ### CMD-prompt
 ```
 git clone https://github.com/sdaaish/emacs-demo.git
@@ -37,20 +37,22 @@ This starts Emacs with the settings in the init-file. All changes stays in that 
 ## Scripts
 ### demo.cmd
 **Syntax**: `.\demo.cmd <demo[1-n]>\init.el`
+[demo.cmd](./demo.cmd)
 
 ### demo.ps1
 **Syntax**: `.\demo.ps1 <demo[1-n]>\init.el`
+[demo.ps1](./demo.ps1)
 
 ## Emacs config-dirs
 ### demo1
 Plain emacs config with `use-package`. Demonstrates how to load packages from scratch with use-package.
-A very basic config to start with. (./demo1/init.el)
+A very basic config to start with. [init.el](./demo1/init.el)
 
 ### demo2
-Downloads `helm and `helm-google`. (./demo2/init.el)
+Downloads `helm and `helm-google`. [init.el](./demo2/init.el)
 
 ### demo3
-Preconfigured for testing of `company mode`. (./demo3/init.el)
+Preconfigured for testing of `company mode`. [init.el](./demo3/init.el)
 
 ### demo[n]
 And you can of course create your own directories with your config. But the script currently requires the init-file to be called `init.el`. The directory can be called anything.
@@ -62,4 +64,4 @@ The initial startup of emacs is slow, since it downloads packages at startup. Bu
 Store emacs packages in a common folder to make startup faster when one switch between different configurations.
 
 ## Other
-There is also other configurations of emacs that you can try out if you don't want to start from scratch. Foe example [Super-emacs](https://github.com/myTerminal/super-emacs).
+There is also other configurations of emacs that you can try out if you don't want to start from scratch. For example [Super-emacs](https://github.com/myTerminal/super-emacs).
