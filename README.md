@@ -37,22 +37,30 @@ This starts Emacs with the settings in the init-file. All changes stays in that 
 ## Scripts
 ### demo.cmd
 **Syntax**: `.\demo.cmd <demo[1-n]>\init.el`
+
 [demo.cmd](./demo.cmd)
 
 ### demo.ps1
 **Syntax**: `.\demo.ps1 <demo[1-n]>\init.el`
+
 [demo.ps1](./demo.ps1)
 
 ## Emacs config-dirs
 ### demo1
 Plain emacs config with `use-package`. Demonstrates how to load packages from scratch with use-package.
-A very basic config to start with. [init.el](./demo1/init.el)
+A very basic config to start with.
+
+[init.el](./demo1/init.el)
 
 ### demo2
-Downloads `helm and `helm-google`. [init.el](./demo2/init.el)
+Downloads `helm and `helm-google`.
+
+[init.el](./demo2/init.el)
 
 ### demo3
-Preconfigured for testing of `company mode`. [init.el](./demo3/init.el)
+Preconfigured for testing of `company mode`.
+
+[init.el](./demo3/init.el)
 
 ### demo[n]
 And you can of course create your own directories with your config. But the script currently requires the init-file to be called `init.el`. The directory can be called anything.
