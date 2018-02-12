@@ -68,8 +68,8 @@ And you can of course create your own directories with your config. But the scri
 ## Problems
 The initial startup of emacs is slow, since it downloads packages at startup. But the second time it will be faster.
 
-## Todo
-Store emacs packages in a common folder to make startup faster when one switch between different configurations.
+## Packages
+Emacs packages are stored in a common folder to make startup faster when you switch between different configurations. This might interfere with older configurations.
 
 ## Other
 There is also other configurations of emacs that you can try out if you don't want to start from scratch. For example [Super-emacs](https://github.com/myTerminal/super-emacs).
