@@ -11,7 +11,7 @@ Currently this works in Windows 10. Other versions not tested, but any Windows v
 - `emacs.exe` must be in the path for the scripts to work
 
 ## How to use this
-In Windows from either the command-shell or powershell follow instructions below.
+In Windows from either the command-shell or powershell. From Linux use the the shell according to instructions below.
 ### CMD-prompt
 ```
 git clone https://github.com/sdaaish/emacs-demo.git
@@ -28,8 +28,16 @@ cd emacs-demo
 .\demo.ps1 demo2\init.el
 ...
 ```
+### Linux shell
+```
+git clone https://github.com/sdaaish/emacs-demo.git
+cd emacs-demo
+.\demo.sh demo1\init.el
+.\demo.sh demo2\init.el
+...
+```
 ### Results
-This starts Emacs with the settings in the init-file. All changes stays in that directory and not your `~/.emacs.d`.
+This starts Emacs with the settings in the init-file. All changes stays in that directory and not your `~/.emacs.d`. This is useful for testing different settings or packages.
 
 ## Emacs startup options
 [Info about Emacs startup options](./emacs-startup-opts.md)
@@ -44,6 +52,11 @@ This starts Emacs with the settings in the init-file. All changes stays in that 
 **Syntax**: `.\demo.ps1 <demo[1-n]>\init.el`
 
 [demo.ps1](./demo.ps1)
+
+### demo.sh
+**Syntax**: `.\demo.sh <demo[1-n]>\init.el`
+
+[demo.sh](./demo.sh)
 
 ## Emacs config-dirs
 ### demo1
