@@ -1,5 +1,6 @@
+
 # -*- mode: snippet -*-
 # name: jira
 # key: jira
 # --
-[[https://jira.example.com/browse/${1:$$(upcase yas-text)}][$1]]$0
+[[https://jira.example.com/browse/${1:$$(upcase yas-text)}][$1]${0:$$(insert "]")}
