@@ -1,0 +1,5 @@
+# Ignore build files and cache
+.extension/
+straight/
+.lsp-pwsh/
+.lsp-session-v1
