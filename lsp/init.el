@@ -3,6 +3,8 @@
 
 ;; This file is a good starting point for a new installations of emacs. Put the init-el in your ~/.emacs.d directory, or in Windows, %AppData%\.emacs.d
 
+;; This version uses Straight as a package-manager with Use-package support instead ov the built-in Package-handling system.
+
 ;; This parts sets variables so files are stored in the init-file directory
 (setq user-init-file (or load-file-name (buffer-file-name)))
 (setq user-emacs-directory (file-name-directory user-init-file))
@@ -34,27 +36,28 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
-(use-package yasnippet
-  :straight t)
+(use-package flycheck
+  :config
+  (global-flycheck-mode t))
 
-(use-package yasnippet-snippets
-  :straight t)
+(use-package yasnippet)
+
+(use-package yasnippet-snippets)
+
+(use-package powershell)
 
 (use-package lsp-pwsh
-:straight (lsp-pwsh
-           :host github
-           :repo "kiennq/lsp-powershell")
-:hook (powershell-mode . (lambda () (require 'lsp-pwsh) (lsp)))
-:defer t)
+  :straight (lsp-pwsh
+             :host github
+             :repo "kiennq/lsp-powershell")
+  :hook (powershell-mode . (lambda () (require 'lsp-pwsh) (lsp)))
+  :defer t)
 
 (use-package lsp-ui
-  :commands lsp-ui-mode
-  :straight t)
+  :commands lsp-ui-mode)
 
-(use-package company
-  :straight t)
+(use-package company)
 (use-package company-lsp
- :straight t
  :config
   (push 'company-lsp company-backends))
 
