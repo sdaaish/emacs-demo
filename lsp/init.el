@@ -36,16 +36,24 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
+;; Syntaxchecking with the modern version of flymake
 (use-package flycheck
   :config
   (global-flycheck-mode t))
 
+;; Snippets
 (use-package yasnippet)
-
 (use-package yasnippet-snippets)
 
-(use-package powershell)
+;; Language Server Protocol
+;; Has built-in support for bash. Needs bash-language-server, installed separately
+(use-package lsp-mode
+  :commands lsp
+  :hook
+  (sh-mode . lsp))
 
+;; LSP for powershell
+(use-package powershell)
 (use-package lsp-pwsh
   :straight (lsp-pwsh
              :host github
@@ -53,9 +61,11 @@
   :hook (powershell-mode . (lambda () (require 'lsp-pwsh) (lsp)))
   :defer t)
 
+;; UI for LSP
 (use-package lsp-ui
   :commands lsp-ui-mode)
 
+;; Autocolpletions with Complete
 (use-package company)
 (use-package company-lsp
  :config
