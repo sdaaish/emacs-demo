@@ -41,6 +41,10 @@
   :config
   (global-flycheck-mode t))
 
+(use-package avy-flycheck
+  :config
+  (avy-flycheck-setup))
+
 ;; Snippets
 (use-package yasnippet)
 (use-package yasnippet-snippets)
