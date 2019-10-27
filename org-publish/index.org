@@ -1,0 +1,14 @@
+* Index file
+This is kust an example file to demonstrate the org-publishing function.
+
+** Subtitle
+This is the second level.
+
+Add a few items:
+- The first one
+- The second
+
+** Some other title
+More text.
+
+[[file:README.org][Readme]]

@@ -1,0 +1,5 @@
+# Ignore build files and cache
+html/
+straight/
+.org-timestamps/
+*.elc
