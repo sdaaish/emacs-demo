@@ -72,7 +72,7 @@
 ;; Autocolpletions with Complete
 (use-package company)
 (use-package company-lsp
- :config
+  :config
   (push 'company-lsp company-backends))
 
 ;; Print out startup time

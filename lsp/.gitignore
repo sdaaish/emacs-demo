@@ -3,3 +3,4 @@
 straight/
 .lsp-pwsh/
 .lsp-session-v1
+*.elc
