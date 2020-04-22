@@ -36,44 +36,23 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
-;; Syntaxchecking with the modern version of flymake
-(use-package flycheck
-  :config
-  (global-flycheck-mode t))
+;; Install org and tools
+(use-package org
+  :straight org-plus-contrib)
 
-(use-package avy-flycheck
-  :config
-  (avy-flycheck-setup))
-
-;; Snippets
-(use-package yasnippet)
-(use-package yasnippet-snippets)
-
-;; Language Server Protocol
-;; Has built-in support for bash. Needs bash-language-server, installed separately
-(use-package lsp-mode
-  :commands lsp
-  :hook
-  (sh-mode . lsp))
-
-;; LSP for powershell
-(use-package powershell)
-(use-package lsp-pwsh
-  :straight (lsp-pwsh
-             :host github
-             :repo "kiennq/lsp-powershell")
-  :hook (powershell-mode . (lambda () (require 'lsp-pwsh) (lsp)))
-  :defer t)
-
-;; UI for LSP
-(use-package lsp-ui
-  :commands lsp-ui-mode)
-
-;; Autocolpletions with Complete
-(use-package company)
-(use-package company-lsp
-  :config
-  (push 'company-lsp company-backends))
+(require 'ox-publish)
+(setq org-publish-timestamp-directory (expand-file-name ".org-timestamps/" user-emacs-directory))
+(setq org-publish-project-alist
+      `(("Current-dir"
+         :base-directory ,(file-name-directory "./")
+         :base-extension "org"
+         :publishing-directory ,(file-name-directory "./html/")
+         :publishing-function org-html-publish-to-html
+         :recursive nil
+         )))
 
 ;; Print out startup time
 (message "*** Startup time=%s ***" (emacs-init-time))
+
+(provide 'init)
+;;; init.el ends here

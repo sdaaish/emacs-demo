@@ -1,0 +1,8 @@
+* Readme
+This is the readme for this project.
+
+** Description
+Works as an example to publish Org-files with emacs from an external script.
+
+[[file:publish.sh][publish.el]]
+[[file:index.org][Index]]

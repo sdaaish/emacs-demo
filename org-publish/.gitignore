@@ -1,6 +1,5 @@
 # Ignore build files and cache
-.extension/
+html/
 straight/
-.lsp-pwsh/
-.lsp-session-v1
+.org-timestamps/
 *.elc
