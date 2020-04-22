@@ -39,7 +39,9 @@
 
 (use-package yasnippet
   :ensure t
-  :config (yas-global-mode))
+  :config (yas-global-mode)
+  :hook (yas-before-expand-snippet-hook . org-toggle-pretty-entities)
+	(yas-after-expand-snippet-hook . org-toggle-pretty-entities))
 
   ;; Print out startup time
 (message "*** Startup time=%s ***" (emacs-init-time))
