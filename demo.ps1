@@ -23,7 +23,7 @@ param (
 )
 
 # Usage message
-function usage {
+Function Usage {
     $scriptname = split-path $PSCommandPath -leaf
     Write-Host "Usage: ./$scriptname -initfile initfilename"
 }
@@ -40,7 +40,7 @@ Function check-file {
 }
 
 # Check for an existing emacs executable in PATH and starts emacs with the options.
-Function start-emacs {
+FunctiOn Start-Emacs {
     try {
         $exe = (Get-Command emacs.exe -Erroraction Stop).source
     }
@@ -49,7 +49,7 @@ Function start-emacs {
         break
     }
     # Call emacs with directory and init-file as options
-    Invoke-Expression "$exe --no-init-file --chdir $dir --load $initfile $initfile"
+    & $exe --no-init-file --chdir $dir --load $initfile $initfile
 }
 
 # Main
@@ -58,9 +58,9 @@ if (check-file) {
     $initfile = Convert-Path -Path $initfile
     # Strip out the directory
     $dir = Split-Path -Path $initfile -Parent
-    start-emacs
+    Start-Emacs
 }
 else {
     # No initfile supplied to the script
-    usage
+    Usage
 }
