@@ -1,4 +1,4 @@
-# emacs-demo
+# Emacs-demo
 ## Concept
 Used to test different Emacs configurations.
 The script starts Emacs with the init-file from one of the directories, changes it's default location to that directory, downloads different packages to a subdirectory, and opens the init-file from that directory. This means you can test different Emacs init-file versions without cluttering your main emacs user-init-directory.
@@ -78,6 +78,21 @@ Preconfigured for testing of `company mode`.
 ### demo[n]
 And you can of course create your own directories with your config. But the script currently requires the init-file to be called `init.el`. The directory can be called anything.
 
+### lsp
+Try `lsp-mode`. Limited functionality at the moment.
+
+[lsp](./lsp/)
+
+### org-publish
+An example of how to publish a separate directory with `org-publish`. Can be used i CI/CD and automation to publish org-mode files to HTML. Complete example that generates a ready HTML-output.
+
+[org-publish](./org-publish/)
+
+### yas
+Try emacs with `yasnippet-mode`.
+
+[init.el](./yas/init.el)
+
 ## Problems
 The initial startup of emacs is slow, since it downloads packages at startup. But the second time it will be faster.
 
@@ -85,4 +100,9 @@ The initial startup of emacs is slow, since it downloads packages at startup. Bu
 Emacs packages are stored in a common folder to make startup faster when you switch between different configurations. This might interfere with older configurations.
 
 ## Other
-There is also other configurations of emacs that you can try out if you don't want to start from scratch. For example [Super-emacs](https://github.com/myTerminal/super-emacs).
+There is also other configurations of emacs that you can try out if you don't want to start from scratch. For example:
+- [Super-emacs](https://github.com/myTerminal/super-emacs)
+- [Prelude](https://github.com/bbatsov/prelude)
+- [Purcell](https://github.com/purcell/emacs.d)
+- [Doom Emacs](https://github.com/doomemacs/doomemacs)
+- [And others](https://github.com/search?q=awesome-emacs)
