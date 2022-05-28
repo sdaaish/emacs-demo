@@ -1,8 +1,29 @@
+#+setupfile: publish.setup
+#+title: How to publish with org mode
+#+subtitle: An example of how to create a local setup for publishing.
 * Readme
 This is the readme for this project.
 
 ** Description
-Works as an example to publish Org-files with emacs from an external script.
+Works as an example to publish *Org-files* with emacs from an external script.
 
-[[file:publish.sh][publish.el]]
+Start emacs one time with the shell in the parent folder, so it can download and install software.
+#+begin_example
+../demo.{ps1|sh|cmd} org-publish/init.el
+#+end_example
+* Publish scripts
+Include the content of the publishing scripts. Use either the ~sh-script~ or the ~powershell-script~ to generate the export. Both calls ~publish.el~ that is the exporting script.
+** publish.el
+#+Include: "publish.el" src emacs-lisp
+** publish.sh
+#+Include: "publish.sh" src sh
+** publish.ps1
+#+Include: "publish.ps1" src powershell
+
+* Images can be included
+#+caption: This is a listing of the files in this directory
+#+ATTR_HTML: :alt directory listing image :title Directory content :align left
+[[../img/directory.png]]
+
+
 [[file:index.org][Index]]

@@ -1,6 +1,10 @@
+#+setupfile: publish.setup
+#+title: How to publish with org mode
+#+subtitle: An example of how to create a local setup for publishing.
 * Index file
-This is kust an example file to demonstrate the org-publishing function.
+This is an example file to demonstrate the org-publishing function.
 
+For more info, see the [[file:README.org][readme]].
 ** Subtitle
 This is the second level.
 
@@ -8,7 +12,40 @@ Add a few items:
 - The first one
 - The second
 
+*** A subheading
+The third level.
+
 ** Some other title
 More text.
 
-[[file:README.org][Readme]]
+1. A numbered list
+2. With more lines
+3. And another one
+
+#+begin_quote
+"A quote from someone famous" -  Unknown.
+#+end_quote
+** Include sources
+#+begin_src emacs-lisp
+(directory-files ".")
+#+end_src
+
+#+RESULTS:
+| . | .#index.org | .. | .gitignore | .org-timestamps | README.org | html | img | index.org | init.el | publish.el | publish.ps1 | publish.setup | publish.sh | straight |
+
+** Directory listing
+#+begin_example
+Directory tree
+==============
+[-] org-publish
+ |--[+] html
+ |--[+] img
+ |--[+] straight
+ |----- README.org
+ |----- index.org
+ |----- init.el
+ |----- publish.el
+ |----- publish.ps1
+ |----- publish.setup
+ `----- publish.sh
+#+end_example

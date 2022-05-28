@@ -38,7 +38,9 @@
 
 ;; Install org and tools
 (use-package org
-  :straight org-plus-contrib)
+  :straight org-contrib)
+
+(use-package htmlize)
 
 (require 'ox-publish)
 (setq org-publish-timestamp-directory (expand-file-name ".org-timestamps/" user-emacs-directory))
