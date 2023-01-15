@@ -3,7 +3,7 @@ Get-ChildItem ~
 $file = "file1.txt"
 Write-Host "Writing stuff to $file"
 Add-Content -Value "Some text" -Path $file
-Write-Host "reading from $file"
+Write-Host "Reading from $file"
 Get-Content -Path $file
 
 Write-Host "Get API info from Star Wars API"

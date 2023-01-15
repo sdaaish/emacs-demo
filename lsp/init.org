@@ -1,0 +1,161 @@
+* Init file for Emacs
+#+property:header-args :tangle ./init.el :result silent :comments both
+
+This is the init-file that are loaded by emacs when the script =demo.{cmd,sh,ps1}= is run.
+All files used by this emacs-session (packages, themes, faces etc) should be stored in this directory.
+
+This file is a good starting point for a new installations of emacs. Put the init-el in your ~/.emacs.d directory, or in Windows, %AppData%\.emacs.d
+
+This version uses Straight as a package-manager with Use-package support instead of the built-in Package-handling system.
+It also has it's =init-file= generated from *Org mode*.
+
+Currently =LSP-mode= is not working on Windows.
+
+** Early init
+This parts sets variables so files are stored in the init-file directory
+#+begin_src emacs-lisp
+(setq user-init-file (or load-file-name (buffer-file-name)))
+(setq user-emacs-directory (file-name-directory user-init-file))
+(setq default-directory (file-name-directory user-init-file))
+(setq package-user-dir (concat (file-name-directory user-init-file) "../elpa/"))
+
+;; use a separate file to store changes made by customize.
+(setq custom-file (expand-file-name "customize.el" user-emacs-directory))
+(load custom-file 'noerror)
+
+;; We want to use UTF-8 as coding system
+(set-language-environment "utf-8")
+#+end_src
+
+** Install straight package manager
+Use =straight= as package-manager instead for the built in.
+#+begin_src emacs-lisp
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+#+end_src
+
+** Also install use-package
+=Use-package= still works with =straight=, lets use that for simplified configuration.
+#+begin_src emacs-lisp
+(straight-use-package 'use-package)
+(setq straight-use-package-by-default t)
+#+end_src
+
+** GCMH
+Manage garbage collection (=gh=) automatically.
+#+begin_src emacs-lisp
+  (use-package gcmh
+    :diminish gcmh-mode
+    :config (gcmh-mode 1))
+#+end_src
+
+** Syntax checking with the modern version of flymake
+#+begin_src emacs-lisp
+(use-package flycheck
+  :config
+  (global-flycheck-mode t))
+#+end_src
+
+** Navigation with avy
+#+begin_src emacs-lisp
+(use-package avy-flycheck
+  :config
+  (avy-flycheck-setup))
+#+end_src
+
+** Snippets
+#+begin_src emacs-lisp
+(use-package yasnippet)
+(use-package yasnippet-snippets)
+#+end_src
+
+** Language Server Protocol
+Has built-in support for bash. Needs bash-language-server, installed separately
+#+begin_src emacs-lisp
+(use-package lsp-mode
+  :commands lsp
+  :hook
+  ((powershell-mode sh-mode) . lsp)
+  (lsp-mode . lsp-enable-which-key-integration))
+#+end_src
+
+** LSP for powershell
+#+begin_src emacs-lisp
+(use-package powershell)
+(use-package ob-powershell)
+#+end_src
+
+** UI for LSP
+#+begin_src emacs-lisp
+(use-package lsp-ui
+  :commands lsp-ui-mode)
+#+end_src
+
+** Ivy
+#+begin_src emacs-lisp
+(use-package ivy
+  :config (ivy-mode 1))
+#+end_src
+
+** Ivy for LSP
+#+begin_src emacs-lisp
+(use-package lsp-ivy
+  :commands lsp-ivy-workspace-symbol)
+#+end_src
+
+** Which key
+#+begin_src emacs-lisp
+(use-package which-key
+  :config
+  (which-key-mode))
+#+end_src
+
+** Autocompletion with Company
+#+begin_src emacs-lisp
+(use-package company)
+(use-package company-lsp
+  :config
+  (push 'company-lsp company-backends))
+#+end_src
+
+** Performance
+Increase buffer to read from LSP process.
+#+begin_src emacs-lisp
+(setq read-process-output-max (* 1024 1024))
+#+end_src
+
+** Org mode
+#+begin_src emacs-lisp
+(setq org-src-preserve-indentation t)
+#+end_src
+
+** Load modus theme
+=Modus themes= is a collection  of highly customizable themes.
+#+begin_src emacs-lisp
+(use-package modus-themes
+  :ensure t
+  :init (load-theme 'modus-vivendi-tinted t))
+#+end_src
+
+** Set a default font.
+Set a default font, and change also the current frame.
+#+begin_src emacs-lisp
+(set-face-attribute 'default t :font "Lucida Console 12")
+(set-frame-font "Lucida Console 12" nil t)
+#+end_src
+
+** The end
+Print out startup time.
+#+begin_src emacs-lisp
+(message "*** Startup time=%s ***" (emacs-init-time))
+#+end_src
