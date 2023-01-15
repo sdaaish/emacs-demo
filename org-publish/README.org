@@ -23,7 +23,7 @@ Include the content of the publishing scripts. Use either the ~sh-script~ or the
 * Images can be included
 #+caption: This is a listing of the files in this directory
 #+ATTR_HTML: :alt directory listing image :title Directory content :align left
-[[../img/directory.png]]
+[[./img/directory.png]]
 
-
+Some text
 [[file:index.org][Index]]

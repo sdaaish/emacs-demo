@@ -13,5 +13,5 @@
 #+latex_header:
 #+options: html-link-use-abs-url:nil html-postamble:auto
 #+options: html-preamble:t html-scripts:nil html-style:t
-#+options: html5-fancy:nil tex:t
+#+options: html5-fancy:nil tex:t timestamp:nil
 #+startup: indent show3levels

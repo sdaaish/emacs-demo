@@ -38,19 +38,34 @@
 
 ;; Install org and tools
 (use-package org
-  :straight org-contrib)
+  :straight org-contrib
+  :custom
+  (org-html-validation-link nil)
+  (org-export-with-author nil)
+  (org-export-with-date nil)
+  (org-export-time-stamp-file nil)
+  (org-export-with-timestamps nil)
+  (org-export-creator-string nil))
 
 (use-package htmlize)
 
 (require 'ox-publish)
 (setq org-publish-timestamp-directory (expand-file-name ".org-timestamps/" user-emacs-directory))
 (setq org-publish-project-alist
-      `(("Current-dir"
+      `(("Current-dir" :components ("org-notes" "org-static"))
+        ("org-notes"
          :base-directory ,(file-name-directory "./")
          :base-extension "org"
          :publishing-directory ,(file-name-directory "./html/")
          :publishing-function org-html-publish-to-html
          :recursive nil
+         )
+        ("org-static"
+         :base-directory  ,(file-name-directory "./img/")
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "./html/img/"
+         :recursive t
+         :publishing-function org-publish-attachment
          )))
 
 ;; Print out startup time
