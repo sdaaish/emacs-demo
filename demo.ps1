@@ -42,10 +42,10 @@ Function check-file {
 # Check for an existing emacs executable in PATH and starts emacs with the options.
 FunctiOn Start-Emacs {
     try {
-        $exe = (Get-Command emacs.exe -Erroraction Stop).source
+        $exe = (Get-Command runemacs.exe -Erroraction Stop).source
     }
     catch {
-        "No emacs.exe in path"
+        "No Emacs executable in path."
         break
     }
     # Call emacs with directory and init-file as options

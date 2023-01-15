@@ -1,0 +1,19 @@
+#+title: Vertico example.
+#+subtitle: An example of modern alternatives to completion and navigation.
+* Readme
+This is the readme for this project.
+
+** Description
+An example of modern alternatives to completion and vertical navigation. Uses these packages:
+- Vertico
+- Orderless
+- Consult
+- Marginalia
+- Embark
+
+Start Emacs one time with the shell in the parent folder, so it can download and install software.
+#+begin_example
+../demo.{ps1|sh|cmd} vertico/init.el
+#+end_example
+
+This could work as a minimal example for an Emacs configuration with enabled tools for navigation and completion.
