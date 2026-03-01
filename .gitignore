@@ -7,3 +7,6 @@ elpa/
 url/
 eshell/
 /yas/network-security.data
+.cache
+eln-cache
+.lsp-session-v1

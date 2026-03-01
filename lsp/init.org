@@ -122,7 +122,10 @@ Has built-in support for bash. Needs bash-language-server, installed separately
 
 ** Autocompletion with Company
 #+begin_src emacs-lisp
-(use-package company)
+(use-package company
+  :custom (company-minimum-prefix-length 1)
+  (company-idle-time 0.2))
+
 (use-package company-lsp
   :config
   (push 'company-lsp company-backends))
