@@ -10,3 +10,5 @@ eshell/
 .cache
 eln-cache
 .lsp-session-v1
+
+**/.venv
